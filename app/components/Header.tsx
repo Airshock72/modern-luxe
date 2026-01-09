@@ -19,7 +19,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className='bg-transparent relative z-50'>
+    <header className='bg-transparent absolute w-full top-0 z-50'>
       <div className='container mx-auto'>
         <nav aria-label='Global' className='flex items-center justify-between p-6 lg:px-8'>
           <div className='flex lg:flex-1'>
