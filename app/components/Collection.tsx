@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Handbag, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
 
 const Collection = () => {
   const ProductCollection: ProductCollectionData[] = [
@@ -129,6 +132,7 @@ const Collection = () => {
         {ProductCollection.map(product => (
           <div
             key={product.id}
+            onClick={() => toast.info('Feature coming soon!')}
             className='group bg-white hover:bg-transparent rounded-xl shadow-sm hover:shadow-lg transition-all duration-300
              overflow-hidden border border-gray-100 hover:border-gray-200 cursor-pointer p-3'
           >
@@ -266,7 +270,10 @@ const Collection = () => {
         ))}
       </div>
       <div className='text-center'>
-        <Button className='px-6 h-12 font-normal tracking-wide'>
+        <Button
+          className='px-6 h-12 font-normal tracking-wide'
+          onClick={() => toast.info('Feature coming soon!')}
+        >
           View All Products
         </Button>
       </div>

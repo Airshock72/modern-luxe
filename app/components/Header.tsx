@@ -14,6 +14,7 @@ import { ShoppingBasket } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -78,7 +79,7 @@ const Header = () => {
             </Link>
           </PopoverGroup>
           <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-            <Button variant='default'>
+            <Button variant='default' onClick={() => toast.info('Feature coming soon!')}>
               <ShoppingBasket size={30} /> Shop Now
             </Button>
           </div>
@@ -129,7 +130,7 @@ const Header = () => {
                 </Link>
               </div>
               <div className='py-6'>
-                <Button variant='default'>
+                <Button variant='default' onClick={() => toast.info('Feature coming soon!')}>
                   <ShoppingBasket size={30} /> Shop Now
                 </Button>
               </div>

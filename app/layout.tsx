@@ -3,6 +3,7 @@ import { geistSans } from './fonts/geist-sans'
 import { geistMono } from './fonts/geist-mono'
 import './globals.css'
 import { ReactNode } from 'react'
+import { Toaster } from '@/components/ui/sonner'
 import Header from '@/app/components/Header'
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Toaster position='top-center' closeButton  />
       </body>
     </html>
   )
