@@ -15,3 +15,15 @@ interface ProductCollectionColors {
     readonly name: string
     readonly color: string
 }
+
+interface GrowthStatsData {
+    readonly number: string
+    readonly icon: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>
+    readonly title: string
+    readonly description: string
+}
+
+interface GrowthDetailData {
+    readonly value: string
+    readonly title: string
+}
