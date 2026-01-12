@@ -5,8 +5,13 @@ interface ProductCollectionData {
     readonly price: number
     readonly originalPrice: number
     readonly image: string
-    readonly colors: number
+    readonly colors: ProductCollectionColors[]
     readonly rating: number
     readonly badge: string
     readonly category: string
+}
+
+interface ProductCollectionColors {
+    readonly name: string
+    readonly color: string
 }

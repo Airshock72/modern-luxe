@@ -1,21 +1,40 @@
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
-import { DollarSign, Handbag, Star } from 'lucide-react'
+import { Handbag, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const Collection = () => {
-  //TODO EDIT this collection colors (2:32:43)
   const ProductCollection: ProductCollectionData[] = [
+    {
+      id: 1,
+      name: 'Luxury Office Chair',
+      price: 299.99,
+      originalPrice: 399.99,
+      image: '/modern-luxe/assets/chair.jpg',
+      colors: [
+        { name: 'Midnight Black', color: '#1a1a1a' },
+        { name: 'Charcoal Gray', color: '#4a4a4a' },
+        { name: 'Ocean Blue', color: '#2563eb' },
+        { name: 'Forest Green', color: '#059669' }
+      ],
+      rating: 4.8,
+      badge: 'Best Sale',
+      category: 'Chairs'
+    },
     {
       id: 2,
       name: 'Modern Dining Chair',
       price: 159.99,
       originalPrice: 199.99,
       image: '/modern-luxe/assets/chair2.jpg',
-      colors: 2,
-      rating: 4.7,
-      badge: 'Sale',
-      category: 'Lightning'
+      colors: [
+        { name: 'Pure White', color: '#ffffff' },
+        { name: 'Warm Beige', color: '#f5f5dc' },
+        { name: 'Soft Gray', color: '#d1d5db' }
+      ],
+      rating: 4.6,
+      badge: 'New',
+      category: 'Chairs'
     },
     {
       id: 3,
@@ -23,7 +42,13 @@ const Collection = () => {
       price: 89.99,
       originalPrice: 129.99,
       image: '/modern-luxe/assets/lamp.jpg',
-      colors: 5,
+      colors: [
+        { name: 'Gold Brass', color: '#d4af37' },
+        { name: 'Rose Gold', color: '#e8b4a6' },
+        { name: 'Silver Chrome', color: '#c0c0c0' },
+        { name: 'Matte Black', color: '#2d2d2d' },
+        { name: 'Copper Bronze', color: '#b87333' }
+      ],
       rating: 4.9,
       badge: 'Hot',
       category: 'Lightning'
@@ -34,7 +59,10 @@ const Collection = () => {
       price: 199.99,
       originalPrice: 249.99,
       image: '/modern-luxe/assets/lamp2.jpg',
-      colors: 2,
+      colors: [
+        { name: 'Classic Black', color: '#000000' },
+        { name: 'Nordic White', color: '#fafafa' }
+      ],
       rating: 4.7,
       badge: 'Sale',
       category: 'Lightning'
@@ -45,7 +73,14 @@ const Collection = () => {
       price: 1299.99,
       originalPrice: 1599.99,
       image: '/modern-luxe/assets/sofa.jpg',
-      colors: 6,
+      colors: [
+        { name: 'Royal Navy', color: '#1e3a8a' },
+        { name: 'Emerald Green', color: '#10b981' },
+        { name: 'Burgundy Red', color: '#991b1b' },
+        { name: 'Chocolate Brown', color: '#78350f' },
+        { name: 'Pearl Gray', color: '#9ca3af' },
+        { name: 'Cream White', color: '#fef3c7' }
+      ],
       rating: 4.9,
       badge: 'Popular',
       category: 'Sofas'
@@ -56,7 +91,11 @@ const Collection = () => {
       price: 79.99,
       originalPrice: 99.99,
       image: '/modern-luxe/assets/stool.jpg',
-      colors: 3,
+      colors: [
+        { name: 'Natural Wood', color: '#deb887' },
+        { name: 'Ebony Black', color: '#1c1c1c' },
+        { name: 'Ash Gray', color: '#6b7280' }
+      ],
       rating: 4.5,
       badge: 'New',
       category: 'Stools'
@@ -99,54 +138,93 @@ const Collection = () => {
                 alt={product.name}
                 width={400}
                 height={300}
-                className='w-full  object-cover group-hover:scale-105 transition-transform duration-300'
+                className='w-full object-cover group-hover:scale-105 transition-transform duration-300'
               />
 
               <div className='absolute top-4 left-4'>
-                <Badge className={`${getBadgeColor(product.badge)} flex items-center gap-1 py-1`}>
-                  <DollarSign size={16} />
+                <Badge className={`${getBadgeColor(product.badge)} flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-md`}>
                   {product.badge}
                 </Badge>
               </div>
 
-              <div className='absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-gray-700'>
-                {product.colors} colors
-              </div>
-
-              <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                flex items-center justify-center'>
-                <Button>
-                  <Handbag size={18} />
-                      Add to Cart
-                </Button>
+              <div className='absolute top-4 right-4'>
+                <div className='bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-sm border border-gray-200'>
+                  <div className='text-xs text-gray-600 mb-1 text-center'>
+                    {product.colors.length} Colors
+                  </div>
+                  <div className='flex gap-1'>
+                    {product.colors.slice(0, 3).map((colorItem, index) => (
+                      <div
+                        key={index}
+                        className='w-4 h-4 rounded-full border-2 border-white shadow-sm hover:scale-110 transition-transform duration-200'
+                        style={{ backgroundColor: colorItem.color }}
+                        title={colorItem.name}
+                      />
+                    ))}
+                    {product.colors.length > 3 && (
+                      <div className='w-4 h-4 rounded-full bg-gray-200 border-2 border-white shadow-sm flex items-center justify-center'>
+                        <span className='text-[8px] font-medium text-gray-600'>
+                            +{product.colors.length - 3}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
 
             </div>
             <div className='p-6'>
-              <div className='flex items-center gap-1 mb-2'>
-                <div className='flex items-center'>
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className={`${
-                        i < Math.floor(product.rating)
-                          ? 'text-yellow-500 fill-current'
-                          : 'text-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className='text-sm text-gray-600 ml-1'>
+              <div className='flex items-center justify-between mb-3'>
+                <div className='flex items-center gap-1'>
+                  <div className='flex items-center'>
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={16}
+                        className={`${
+                          i < Math.floor(product.rating)
+                            ? 'text-yellow-500 fill-current'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className='text-sm text-gray-600 ml-1'>
                       ({product.rating})
-                </span>
+                  </span>
+                </div>
+                <p className='text-xs text-gray-500 uppercase tracking-wider font-medium'>{product.category}</p>
               </div>
 
               <h3 className='text-xl font-semibold text-primary mb-2 group-hover:text-gray-900 transition-colors duration-200'>
                 {product.name}
               </h3>
 
-              <p className='text-sm text-gray-500 mb-3'>{product.category}</p>
+              <div className='mb-4'>
+                <p className='text-sm text-gray-700 mb-2 font-medium'>
+                  Available Colors
+                </p>
+                <div className='flex gap-2'>
+                  {product.colors.slice(0, 5).map((colorItem, index) => (
+                    <div
+                      key={index}
+                      className='group/color relative'
+                    >
+                      <div
+                        className='w-8 h-8 rounded-full border-2 border-gray-200 hover:border-gray-400 shadow-sm hover:shadow-md
+                          transition-all duration-200 cursor-pointer'
+                        style={{ backgroundColor: colorItem.color }}
+                        title={colorItem.name}
+                      />
+                    </div>
+                  ))}
+                  {product.colors.length > 5 && (
+                    <div className='w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-xs text-gray-600 font-medium'>
+                        +{product.colors.length - 5}
+                    </div>
+                  )}
+                </div>
+              </div>
 
               <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-2'>
@@ -158,17 +236,29 @@ const Collection = () => {
                   </span>
                 </div>
 
-                <button className='bg-gray-100 text-black hover:text-primary p-3
-                rounded-full transition-colors duration-200 cursor-pointer'>
+                <button className='bg-gray-100 hover:text-primary p-3 rounded-full transition-colors duration-200
+                cursor-pointer hover:scale-105 hover:shadow-sm hover:shadow-primary/40 hover:transition-all hover:duration-500'>
                   <Handbag size={25} />
                 </button>
               </div>
 
-              <div className='mt-3'>
-                <span className='inline-block bg-green-100 text-green-800 text-sm font-medium px-2 py-1 rounded-full'>
+              <div className='space-y-3'>
+                <div className='inline-flex items-center'>
+                  <span className='bg-green-50 text-green-700 text-sm font-medium px-3 py-1 rounded-full border border-green-200'>
                 Save{' '}
-                  {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
-                </span>
+                    {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
+                  </span>
+                </div>
+                <div className='flex items-center justify-between text-xs text-gray-500'>
+                  <span className='flex items-center gap-1'>
+                    <div className='w-1.5 h-1.5 bg-green-500 rounded-full' />
+                  Free Shipping
+                  </span>
+                  <span className='flex items-center gap-1'>
+                    <div className='w-1.5 h-1.5 bg-blue-500 rounded-full' />
+                  30-Day Return
+                  </span>
+                </div>
               </div>
 
             </div>
@@ -176,7 +266,9 @@ const Collection = () => {
         ))}
       </div>
       <div className='text-center'>
-        <Button className='px-6 h-12'>View All Products</Button>
+        <Button className='px-6 h-12 font-normal tracking-wide'>
+          View All Products
+        </Button>
       </div>
     </div>
   )
