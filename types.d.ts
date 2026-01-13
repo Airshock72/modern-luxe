@@ -27,3 +27,26 @@ interface GrowthDetailData {
     readonly value: string
     readonly title: string
 }
+
+interface InteriorDesignOptionData {
+    readonly id: number
+    readonly icon: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>
+    readonly title: string
+    readonly description: string
+}
+
+interface InteriorDesignImagesData {
+    readonly id: number
+    readonly src: string
+    readonly alt: string
+    readonly hoverText: string
+}
+
+export interface InteriorDesignGuideData {
+    readonly id: number
+    readonly number: string
+    readonly numberColor: string
+    readonly numberContainerBgColor: string
+    readonly title: string
+    readonly description: string
+}

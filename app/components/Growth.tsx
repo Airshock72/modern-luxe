@@ -1,5 +1,6 @@
 import { Award, Globe, Plus, Users } from 'lucide-react'
 import GrowthDetails from '@/app/components/GrowthDetails'
+import { GrowthStatsData } from '@/types'
 
 const Growth = () => {
   const growthStats: GrowthStatsData[] = [

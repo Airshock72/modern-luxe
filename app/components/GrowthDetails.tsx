@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react'
+import { GrowthDetailData } from '@/types'
 
 const GrowthDetails = () => {
   const growthDetails: GrowthDetailData[] = [

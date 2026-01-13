@@ -79,7 +79,7 @@ const Header = () => {
             </Link>
           </PopoverGroup>
           <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-            <Button variant='default' onClick={() => toast.info('Feature coming soon!')}>
+            <Button variant='default' onClick={() => toast.info('Feature not available in Demo Mode, please contact Developer for more info.')}>
               <ShoppingBasket size={30} /> Shop Now
             </Button>
           </div>
@@ -130,7 +130,7 @@ const Header = () => {
                 </Link>
               </div>
               <div className='py-6'>
-                <Button variant='default' onClick={() => toast.info('Feature coming soon!')}>
+                <Button variant='default' onClick={() => toast.info('Feature not available in Demo Mode, please contact Developer for more info.')}>
                   <ShoppingBasket size={30} /> Shop Now
                 </Button>
               </div>
