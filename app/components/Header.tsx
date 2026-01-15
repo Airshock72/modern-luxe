@@ -57,6 +57,7 @@ const Header = () => {
               href='#'
               className='relative text-md font-semibold text-white hover:text-primary hover:scale-110 transition-all
               hover:duration-500 group'
+              onClick={() => toast.info('Feature not available in Demo Mode, please contact Developer for more info.')}
             >About Us
               <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all
               duration-500 ease-out' />
@@ -65,6 +66,7 @@ const Header = () => {
               href='#'
               className='relative text-md font-semibold text-white hover:text-primary hover:scale-110 transition-all
               hover:duration-500 group'
+              onClick={() => toast.info('Feature not available in Demo Mode, please contact Developer for more info.')}
             >Services
               <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all
               duration-500 ease-out' />
@@ -73,6 +75,7 @@ const Header = () => {
               href='#'
               className='relative text-md font-semibold text-white hover:text-primary hover:scale-110 transition-all
               hover:duration-500 group'
+              onClick={() => toast.info('Feature not available in Demo Mode, please contact Developer for more info.')}
             >Contact Us
               <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all
               duration-500 ease-out' />

@@ -3,6 +3,7 @@ import Collection from '@/app/components/Collection'
 import Growth from '@/app/components/Growth'
 import InteriorDesign from '@/app/components/InteriorDesign'
 import Testimonials from '@/app/components/Testimonials'
+import NewsLetter from '@/app/components/NewsLetter'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Growth />
       <InteriorDesign />
       <Testimonials />
+      <NewsLetter />
     </>
   )
 }
