@@ -1,3 +1,4 @@
+import { ForwardRefExoticComponent } from 'react'
 
 interface ProductCollectionData {
     readonly id: number
@@ -66,4 +67,21 @@ export interface TestimonialRatingData {
     readonly number: number
     readonly icon: string
     readonly title: string
+}
+
+export type FooterLinksData = Record<string, FooterLinkData[]>
+
+interface FooterLinkData {
+    readonly name: string
+}
+
+export interface SocialLinks {
+    readonly name: string
+    readonly icon: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>
+    readonly href: string
+}
+
+export interface PrivacyPolicies {
+    readonly id: number
+    readonly name: string
 }

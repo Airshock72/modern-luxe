@@ -1,5 +1,5 @@
 import { Award, Globe, Plus, Users } from 'lucide-react'
-import GrowthDetails from '@/app/components/GrowthDetails'
+import GrowthDetails from '@/app/components/Growth/GrowthDetails'
 import { GrowthStatsData } from '@/types'
 
 const Growth = () => {

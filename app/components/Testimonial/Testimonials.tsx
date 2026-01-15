@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { TestimonialsData } from '@/types'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
 import Image from 'next/image'
-import TestimonialRatings from '@/app/components/TestimonialRatings'
+import TestimonialRatings from '@/app/components/Testimonial/TestimonialRatings'
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0)

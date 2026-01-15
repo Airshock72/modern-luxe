@@ -5,6 +5,7 @@ import './globals.css'
 import { ReactNode } from 'react'
 import { Toaster } from '@/components/ui/sonner'
 import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Luxe Home',
@@ -26,7 +27,8 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <Toaster position='top-center' closeButton  />
+        <Footer />
+        <Toaster position='top-center' closeButton />
       </body>
     </html>
   )

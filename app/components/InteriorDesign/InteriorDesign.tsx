@@ -1,8 +1,8 @@
 'use client'
 
-import InteriorDesignImages from '@/app/components/InteriorDesignImages'
-import InteriorDesignOffers from '@/app/components/InteriorDesignOffers'
-import InteriorDesignGuide from '@/app/components/InteriorDesignGuide'
+import InteriorDesignImages from '@/app/components/InteriorDesign/InteriorDesignImages'
+import InteriorDesignOffers from '@/app/components/InteriorDesign/InteriorDesignOffers'
+import InteriorDesignGuide from '@/app/components/InteriorDesign/InteriorDesignGuide'
 
 const InteriorDesign = () => {
   return (
