@@ -50,3 +50,20 @@ export interface InteriorDesignGuideData {
     readonly title: string
     readonly description: string
 }
+
+export interface TestimonialsData {
+    readonly id: number
+    readonly name: string
+    readonly role: string
+    readonly location: string
+    readonly rating: number
+    readonly text: string
+    readonly image: string
+}
+
+export interface TestimonialRatingData {
+    readonly id: number
+    readonly number: number
+    readonly icon: string
+    readonly title: string
+}
