@@ -1,0 +1,31 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true,
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "minify": {
+      "compress": {
+        "unused": true,
+        "dead_code": true,
+        "drop_console": false
+      },
+      "mangle": {
+        "topLevel": true,
+        "keepClassNames": false,
+        "keepFnNames": false,
+        "keepPrivateProps": false
+      }
+    },
+    "transform": {
+      "react": {
+        "runtime": "automatic"
+      }
+    }
+  },
+  "minify": true,
+  "sourceMaps": false,
+  "isModule": true
+}
